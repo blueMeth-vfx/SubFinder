@@ -1,0 +1,28 @@
+SubFinder - installazione in DaVinci Resolve
+============================================
+(Plutonic Studio)
+
+Serve DaVinci Resolve STUDIO (nella versione gratuita lo scripting non c'e').
+
+1) Copia QUESTI DUE FILE:
+      SubFinder.py
+      plutonic_logo.png
+   dentro la cartella degli script "Utility" di Resolve:
+
+   Windows:
+     %APPDATA%\Blackmagic Design\DaVinci Resolve\Support\Fusion\Scripts\Utility
+   macOS:
+     ~/Library/Application Support/Blackmagic Design/DaVinci Resolve/Fusion/Scripts/Utility
+
+   (Se la cartella "Utility" non esiste, creala.)
+
+2) Avvia (o riavvia) DaVinci Resolve.
+
+3) Apri il plugin da:
+     Workspace > Scripts > Utility > SubFinder
+
+Uso: apri una timeline con una traccia sottotitoli, scrivi la parola,
+premi Cerca (o Invio) e scorri i risultati con le freccette.
+
+Il logo (plutonic_logo.png) serve solo per l'icona nel pannello:
+se manca, il plugin funziona lo stesso.
