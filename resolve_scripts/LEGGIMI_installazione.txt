@@ -21,8 +21,11 @@ Serve DaVinci Resolve STUDIO (nella versione gratuita lo scripting non c'e').
 3) Apri il plugin da:
      Workspace > Scripts > Utility > SubFinder
 
-Uso: apri una timeline con una traccia sottotitoli, scrivi la parola,
-premi Cerca (o Invio) e scorri i risultati con le freccette.
+Si apre in una finestra a parte (Chrome o Edge in modalita' app).
 
-Il logo (plutonic_logo.png) serve solo per l'icona nel pannello:
+Uso: apri una timeline con una traccia sottotitoli e scrivi la parola:
+la playhead salta al primo risultato. Invio o freccia giu' = successivo,
+freccia su = precedente, clic su una riga = ci salta.
+
+Il logo (plutonic_logo.png) serve per l'icona della finestra e della barra:
 se manca, il plugin funziona lo stesso.
