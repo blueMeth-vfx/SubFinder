@@ -15,6 +15,8 @@
 
 ---
 
+> **Fa parte di PlutoniCut**: la casa di tutti gli strumenti Plutonic in un'unica finestra (BeaTonic, PlutonicEdit, SubFinder). Si consiglia di installare quella; questo strumento funziona anche da solo.
+
 ## Cos'è
 
 **SubFinder** cerca una **parola nei sottotitoli** della timeline aperta e **sposta

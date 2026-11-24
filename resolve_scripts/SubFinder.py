@@ -632,6 +632,8 @@ mark { background: var(--accent-bg); color: var(--onaccent); border-radius: 4px;
 .empty { padding: 26px; text-align: center; color: var(--muted); }
 pre.log:empty { display: none; }
 @media (max-width: 640px) { .nav { grid-template-columns: auto auto auto; } .curbox { grid-column: 1 / -1; } .keys { display: none; } }
+html.embed .top, html.embed #bQuit { display: none !important; }
+html.embed .grid { padding-top: 18px; }
 </style>
 </head>
 <body class="look-studio" data-look="studio">
@@ -733,6 +735,9 @@ async function poll() {
   setTimeout(poll, ST && ST.busy ? 300 : 600);
 }
 for (const b of document.querySelectorAll(".looks button")) b.onclick = () => { setLook(b.dataset.look); push(); };
+// Dentro PlutoniCut (la casa degli strumenti): niente intestazione propria, l'aspetto arriva dalla casa
+if (new URLSearchParams(location.search).has("embed")) document.documentElement.classList.add("embed");
+window.addEventListener("message", e => { if (e.data && e.data.look) setLook(e.data.look); });
 $("pin").onclick = () => { $("pin").classList.toggle("on"); push(); };
 function start() {
   for (const [c, id] of Object.entries(BTN)) if (!$(id).onclick) $(id).onclick = () => cmd(c);
@@ -873,13 +878,21 @@ start();
 """
 
 
-def main():
+QUIET = ("goto", "autorefresh")   # comandi istantanei (niente indicatore di lavoro)
+
+
+def setup():
+    """Prepara SubFinder: da solo o dentro PlutoniCut (la casa degli strumenti)."""
     _load_settings()
     try:
         on_refresh()
     except Exception:
         pass
-    run_app((900, 820), idle=_idle, quiet=("goto", "autorefresh"))
+
+
+def main():
+    setup()
+    run_app((900, 820), idle=_idle, quiet=QUIET)
 
 
 main()
